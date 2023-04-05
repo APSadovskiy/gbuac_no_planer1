@@ -210,6 +210,28 @@ function setupAnimation(model)
 		  end: "bottom top"
 		}
 	})
+	/*  */
+	gsap.to('.ground2', {
+		y: "30%",
+		scrollTrigger: {
+		  trigger: ".ground-container2",
+		  scrub: true,
+		  start: "top bottom",
+		  end: "bottom top"
+		}
+	})
+	
+	gsap.from('.clouds2', {
+		y: "25%",
+		scrollTrigger: {
+		  trigger: ".ground-container2",
+		  scrub: true,
+		  start: "top bottom",
+		  end: "bottom top"
+		}
+	})
+	
+	/*  */
 	
 	gsap.to('#line-length', {
 		drawSVG: 100,
@@ -307,12 +329,28 @@ function setupAnimation(model)
 	tl.to(plane.position, {x: -40, y: 0, z: -30, ease: 'power2.inOut'}, delay)
 	
 	delay += sectionDuration;
+	/*  */
+	tl.to(plane.rotation, {x: tau * .25, y: 0, z: -tau * 0.05, ease: 'power3.inOut'}, delay)
+	tl.to(plane.position, {x: -40, y: 0, z: -60, ease: 'power2.inOut'}, delay)
+	
+	delay += sectionDuration;
+	tl.to(plane.rotation, {x: tau * .25, y: 0,  z: tau * 0.05, ease: 'power3.inOut'}, delay)
+	tl.to(plane.position, {x: 40, y: 0, z: -60, ease: 'power2.inOut'}, delay)
+	
+	delay += sectionDuration;
+	
+	tl.to(plane.rotation, {x: tau * .2, y: 0, z: -tau * 0.1, ease: 'power3.inOut'}, delay)
+	tl.to(plane.position, {x: -40, y: 0, z: -30, ease: 'power2.inOut'}, delay)
+	
+	delay += sectionDuration;
+	delay += sectionDuration;
+	/*  */
 	
 	tl.to(plane.rotation, { x: 0, z: 0, y: tau * .25}, delay)
 	tl.to(plane.position, { x: 0, y: -10, z: 50}, delay)
 	
 	delay += sectionDuration;
-	delay += sectionDuration;
+/* 	delay += sectionDuration; */
 	
 	tl.to(plane.rotation, {x: tau * 0.25, y: tau *.5, z: 0, ease:'power4.inOut'}, delay)
 	tl.to(plane.position, {z: 30, ease:'power4.inOut'}, delay)
